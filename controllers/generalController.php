@@ -5,7 +5,7 @@
 
 	$view = new generalView();
 
-	$view->header("Acceuil");
+	$view->header("Accueil");
 		$view->topBar();
 	$view->closeBody();
 	$view->closeHTML();
