@@ -3,7 +3,7 @@
 
 	include_once("views/generalView");
 
-	$view = new generalView();
+	$view = new GeneralView();
 
 	$view->header("Accueil");
 		$view->topBar();

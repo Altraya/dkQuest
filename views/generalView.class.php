@@ -1,7 +1,7 @@
 <?php
 /* Vue général */
 
-class generalView{
+class GeneralView{
 
 	public function __construct(){
 	}
@@ -58,7 +58,7 @@ class generalView{
 	}
 
 	public function closeHTML(){
-		echo'</html>'
+		echo'</html>';
 	}
 };
 ?>
