@@ -2,5 +2,6 @@
 
 	/* Index of the website */
 
-	include_once("controllers/generalController");
+	require_once("controllers/generalController.php");
+
 ?>

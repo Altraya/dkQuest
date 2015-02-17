@@ -1,11 +1,11 @@
 <?php
 	/* General controller */
 
-	include_once("views/generalView");
+	require_once("./views/generalView.class.php");
 
-	$view = new GeneralView();
+	$view = new generalView();
 
-	$view->header("Accueil");
+	$view->header("DK-Quest - Accueil");
 		$view->topBar();
 	$view->closeBody();
 	$view->closeHTML();
