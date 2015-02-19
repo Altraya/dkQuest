@@ -16,6 +16,7 @@ class generalView{
 				<title>'.$pageTitle.'</title>
 				<link rel="stylesheet" href="css/foundation.css">
 				<link rel="stylesheet" href="css/normalize.css">
+				<script src="/js/vendor/modernizr.js"></script>
 			</head>
 		<body>';
 
@@ -38,12 +39,13 @@ class generalView{
 			  	<section class="top-bar-section">
 			    <!-- Right Nav Section -->
 			    	<ul class="right">
-			      		<li class="active"><a href="#">Right Button Active</a></li>
 			      		<li class="has-dropdown">
-					        <a href="#">Right Button Dropdown</a>
+					        <a href="#">Zones</a>
 					        <ul class="dropdown">
-					          	<li><a href="#">First link in dropdown</a></li>
-					          	<li class="active"><a href="#">Active link in dropdown</a></li>
+					          	<li><a href="#">Classique - Royaume de l\'est</a></li>
+					          	<li><a href="#">Classique - Kalimdor</a></li>
+					          	<li><a href="#">Burning Crusade - Outreterre</a></li>
+					          	<li><a href="#">Warth of the lich king - Norfendre</a></li>
 					        </ul>
 			      		</li>
 			   	 	</ul>
@@ -53,12 +55,84 @@ class generalView{
 		echo($html);
 	}
 
+	public function tab($content)
+	{
+		$html = '';
+		$html.= '
+			<ul class="tabs" data-tab role="tablist">
+			  	<li class="tab-title active"><a href="#panel1">Royaume de l\'est</a></li>
+			  	<li class="tab-title"><a href="#panel2">Kalimdor</a></li>
+			  	<li class="tab-title"><a href="#panel3">Outreterre</a></li>
+			  	<li class="tab-title"><a href="#panel4">Norfendre</a></li>
+			</ul>
+			<div class="tabs-content">
+			  	<div class="content active" id="panel1">
+			    	<p>'.$this->table().'</p>
+			  	</div>
+				<div class="content" id="panel2">
+			    	<p>'.$this->table().'</p>
+			  	</div>
+			  	<div class="content" id="panel3">
+			    	<p>'.$this->table().'</p>
+			  	</div>
+			  	<div class="content" id="panel4">
+			    	<p>'.$this->table().'</p>
+			  	</div>
+			</div>
+		';
+		echo($html);
+	}
+
+
+	public function table(){
+		$html = '';
+		$html.= '
+			<table width="100%">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nom</th>
+						<th>Statut</th>
+						<th>Dernier test ou modif</th>
+						<th>Link du rapport de bug si existant</th>
+						<th>Commentaire</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>10000</td>
+						<td>Test</td>
+						<td>Debug</td>
+						<td>15/02/2015</td>
+						<td>None</td>
+						<td>Entièrement script</td>
+					</tr>
+				</tbody>
+			</table>
+		';
+		return $html;
+	}
+
+	//Close body and include some JS files
 	public function closeBody(){
+
+		echo'<script src="/js/vendor/jquery.js"></script>';
+		echo'<script src="/js/vendor/fastclick.js"></script>';
+		echo'<script src="/js/foundation.min.js"></script>';
+
+		echo'
+			<script>
+			  $(document).foundation();
+			</script
+		';
+
 		echo'</body>';
 	}
 
 	public function closeHTML(){
 		echo'</html>';
 	}
+
+
 }
 ?>

@@ -7,6 +7,7 @@
 
 	$view->header("DK-Quest - Accueil");
 		$view->topBar();
+		$view->tab();
 	$view->closeBody();
 	$view->closeHTML();
 ?>
