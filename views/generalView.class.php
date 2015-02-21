@@ -30,7 +30,7 @@ class generalView{
 			<nav class="top-bar" data-topbar role="navigation">
 			  	<ul class="title-area">
 			    	<li class="name">
-			      		<h1><a href="#">DK-Quest</a></h1>
+			      		<h1><a href="./index.php">DK-Quest</a></h1>
 			    	</li>
 			     	<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 			    	<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -55,7 +55,7 @@ class generalView{
 		echo($html);
 	}
 
-	public function tab($content)
+	public function tab()
 	{
 		$html = '';
 		$html.= '
@@ -81,6 +81,39 @@ class generalView{
 			</div>
 		';
 		echo($html);
+	}
+
+	public function tabList(){
+		echo'
+			<ul class="tabs" data-tab role="tablist">
+			  	<li class="tab-title active"><a href="#panel1">Royaume de l\'est</a></li>
+			  	<li class="tab-title"><a href="#panel2">Kalimdor</a></li>
+			  	<li class="tab-title"><a href="#panel3">Outreterre</a></li>
+			  	<li class="tab-title"><a href="#panel4">Norfendre</a></li>
+			</ul>
+		';
+	}
+
+	public function tabContent(){
+		echo'
+			<div class="tabs-content">
+		';
+	}
+
+	public function contentActive($idPannel){
+		echo'
+			<div class="content active" id="'.$idPannel.'">
+		';
+	}
+
+	public function content($idPannel){
+		echo'
+			<div class="content" id="'.$idPannel.'">
+		';
+	}
+
+	public function closeDiv(){
+		echo'</div>';
 	}
 
 
@@ -111,6 +144,45 @@ class generalView{
 			</table>
 		';
 		return $html;
+	}
+
+	public function beginTable(){
+		$html = '';
+		$html.='
+			<table width="100%">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nom</th>
+						<th>Statut</th>
+						<th>Dernier test ou modif</th>
+						<th>Link du rapport de bug si existant</th>
+						<th>Commentaire</th>
+					</tr>
+				</thead>
+				<tbody>
+		';
+		echo($html);
+	}
+
+	public function endTable(){
+		$html = '';
+		$html.='
+			</tbody>
+			</table>
+		';
+	}
+
+	public function tr(){
+		echo'<tr>';
+	}
+
+	public function endTr(){
+		echo'</tr>';
+	}
+
+	public function celTd($content){
+		echo('<td>'.$content.'</td>');
 	}
 
 	//Close body and include some JS files
