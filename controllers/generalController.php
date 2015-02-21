@@ -14,7 +14,7 @@
 
 		$view->tabList(); //beginTab
 		$view->tabContentClass(); //begin div class="tabs-content"
-			$view->tabContentActive("#panel1");
+			$view->tabContentActive("panel1");
 				$view->beginTable();
 					$view->tr();
 						$quests = $model->getQuestList();
@@ -29,13 +29,15 @@
 				$view->endTable();
 			$view->closeDiv(); //end of the content of the pannel
 
-			$view->tabContent("#panel2");
+			$view->tabContent("panel2");
+			echo"<p>hi</p>";
 			$view->closeDiv();
 
-			$view->tabContent("#panel3");
+			$view->tabContent("panel3");
+			echo"cacahuette";
 			$view->closeDiv();
 
-			$view->tabContent("#panel4");
+			$view->tabContent("panel4");
 			$view->closeDiv();
 
 		$view->closeDiv(); //end div class="tabs-content"*/

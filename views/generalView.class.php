@@ -111,7 +111,7 @@ class generalView{
 	}
 
 	public function closeDiv(){
-		echo'</div>';
+		echo('</div>');
 	}
 
 
@@ -169,6 +169,7 @@ class generalView{
 			</tbody>
 			</table>
 		';
+		echo($html);
 	}
 
 	public function tr(){
@@ -185,18 +186,15 @@ class generalView{
 
 	//Close body and include some JS files
 	public function closeBody(){
-
-		echo'<script src="/js/vendor/jquery.js"></script>';
-		echo'<script src="/js/vendor/fastclick.js"></script>';
-		echo'<script src="/js/foundation.min.js"></script>';
-
-		echo'
-			<script>
-			  $(document).foundation();
-			</script
+		$html = '';
+		$html.='
+			<script src="/js/vendor/jquery.js"></script>
+			<script src="/js/vendor/fastclick.js"></script>
+			<script src="/js/foundation.min.js"></script>
+			<script>$(document).foundation();</script>
+			</body>
 		';
-
-		echo'</body>';
+		echo($html);
 	}
 
 	public function closeHTML(){
