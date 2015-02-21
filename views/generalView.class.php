@@ -94,22 +94,20 @@ class generalView{
 		';
 	}
 
-	public function tabContent(){
-		echo'
-			<div class="tabs-content">
-		';
+	public function tabContentClass(){
+		echo('<div class="tabs-content">');
 	}
 
-	public function contentActive($idPannel){
-		echo'
+	public function tabContentActive($idPannel){
+		echo('
 			<div class="content active" id="'.$idPannel.'">
-		';
+		');
 	}
 
-	public function content($idPannel){
-		echo'
+	public function tabContent($idPannel){
+		echo('
 			<div class="content" id="'.$idPannel.'">
-		';
+		');
 	}
 
 	public function closeDiv(){

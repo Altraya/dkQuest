@@ -12,9 +12,9 @@
 	$view->header("DK-Quest - Accueil");
 		$view->topBar();
 
-		/*$view->tabList(); //beginTab
+		$view->tabList(); //beginTab
 		$view->tabContentClass(); //begin div class="tabs-content"
-			$view->tabContentActive("#panel1");*/
+			$view->tabContentActive("#panel1");
 				$view->beginTable();
 					$view->tr();
 						$quests = $model->getQuestList();
@@ -27,16 +27,15 @@
 							$view->endTr();
 						}
 				$view->endTable();
-			//$view->closeDiv(); //end of the content of the pannel
+			$view->closeDiv(); //end of the content of the pannel
 
-			/*$view->tabContentClass("#panel2");
-
+			$view->tabContent("#panel2");
 			$view->closeDiv();
 
-			$view->tabContentClass("#panel3");
+			$view->tabContent("#panel3");
 			$view->closeDiv();
 
-			$view->tabContentClass("#panel4");
+			$view->tabContent("#panel4");
 			$view->closeDiv();
 
 		$view->closeDiv(); //end div class="tabs-content"*/
