@@ -14,8 +14,9 @@ class generalView{
 			<head>
 				<meta charset="utf-8">
 				<title>'.$pageTitle.'</title>
-				<link rel="stylesheet" href="css/foundation.css">
+				<link rel="stylesheet" href="css/foundation.min.css">
 				<link rel="stylesheet" href="css/normalize.css">
+				<link rel="stylesheet" href="css/hack.css">
 				<script src="/js/vendor/modernizr.js"></script>
 			</head>
 		<body>';
@@ -86,10 +87,10 @@ class generalView{
 	public function tabList(){
 		echo'
 			<ul class="tabs" data-tab role="tablist">
-			  	<li class="tab-title active"><a href="#panel1">Royaume de l\'est</a></li>
-			  	<li class="tab-title"><a href="#panel2">Kalimdor</a></li>
-			  	<li class="tab-title"><a href="#panel3">Outreterre</a></li>
-			  	<li class="tab-title"><a href="#panel4">Norfendre</a></li>
+			  	<li class="tab-title active"><a href="#panel1">Norfendre</a></li>
+			  	<li class="tab-title"><a href="#panel2">Outreterre</a></li>
+			  	<li class="tab-title"><a href="#panel3">Kalimdor</a></li>
+			  	<li class="tab-title"><a href="#panel4">Royaume de l\'est</a></li>
 			</ul>
 		';
 	}
