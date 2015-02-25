@@ -2,6 +2,6 @@
 
 	/* Index of the website */
 
-	require_once("controllers/IndexController.php");
+	require_once("controllers/indexController.php");
 
 ?>

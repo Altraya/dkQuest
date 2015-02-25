@@ -1,7 +1,7 @@
 <?php
 /* Vue général */
 
-class generalView{
+class IndexView{
 
 	public function __construct(){
 	}
@@ -55,25 +55,8 @@ class generalView{
 	}
 
 
-	public function tabList(){
-		echo'
-			<ul class="tabs" data-tab role="tablist">
-			  	<li class="tab-title active"><a href="#panel1">Hyjal</a></li>
-			  	<li class="tab-title"><a href="#panel2">Vash\'jir</a></li>
-			  	<li class="tab-title"><a href="#panel3">Le tréfond</a></li>
-			  	<li class="tab-title"><a href="#panel4">Uldum</a></li>
-			  	<li class="tab-title"><a href="#panel5">Les Hautes terres du crépuscule</a></li>
-			</ul>
-		';
-	}
-
-
-	public function closeDiv(){
-		echo('</div>');
-	}
-
-
-	public function table(){
+	//show table with quest
+	public function table($questsArray){
 		$html = '';
 		$html.= '
 			<table width="100%">
@@ -88,35 +71,51 @@ class generalView{
 					</tr>
 				</thead>
 				<tbody>
+			';
+			foreach ($questsArray as $aQuest => $quest) {
+			$html.=	'
 					<tr>
-						<td>10000</td>
-						<td>Test</td>
-						<td>Debug</td>
-						<td>15/02/2015</td>
-						<td>None</td>
-						<td>Entièrement script</td>
-					</tr>
-				</tbody>
-			</table>
+						<td>'.$quest->getId().'</td>
+						<td>'.$quest->getName().'</td>
+						<td>'.$quest->getSituation().'</td>
+						<td>'.$quest->getLastModif().'</td>
+						<td>'.$quest->getLinkBugReport().'</td>
+						<td>'.$quest->getComment().'</td>
+					</tr>';
+			}
+			$html.=	'
+					</tbody>
+				</table>
 		';
 		return $html;
 	}
 
-	public function beginTable(){
+	//show the tab and the tab content (table with quests for each zone)
+	public function tab($questsArray)
+	{
 		$html = '';
-		$html.='
-			<table width="100%">
-				<thead>
-					<tr>
-						<th>Id</th>
-						<th>Nom</th>
-						<th>Statut</th>
-						<th>Dernier test ou modif</th>
-						<th>Link du rapport de bug si existant</th>
-						<th>Commentaire</th>
-					</tr>
-				</thead>
-				<tbody>
+		$html.= '
+			<ul class="tabs" data-tab role="tablist">
+			  	<li class="tab-title active"><a href="#panel1">Hyjal</a></li>
+			  	<li class="tab-title"><a href="#panel2">Vash\'jir</a></li>
+			  	<li class="tab-title"><a href="#panel3">Le tréfond</a></li>
+			  	<li class="tab-title"><a href="#panel4">Uldum</a></li>
+			  	<li class="tab-title"><a href="#panel5">Les Hautes terres du crépuscule</a></li>
+			</ul>
+			<div class="tabs-content">
+			  	<div class="content active" id="panel1">
+			    	<p>'.$this->table($questsArray).'</p>
+			  	</div>
+				<div class="content" id="panel2">
+			    	<p>'.$this->table($questsArray).'</p>
+			  	</div>
+			  	<div class="content" id="panel3">
+			    	<p>'.$this->table($questsArray).'</p>
+			  	</div>
+			  	<div class="content" id="panel4">
+			    	<p>'.$this->table($questsArray).'</p>
+			  	</div>
+			</div>
 		';
 		echo($html);
 	}
@@ -130,16 +129,16 @@ class generalView{
 		echo($html);
 	}
 
+	public function closeDiv(){
+		echo('</div>');
+	}
+
 	public function tr(){
 		echo'<tr>';
 	}
 
 	public function endTr(){
 		echo'</tr>';
-	}
-
-	public function celTd($content){
-		echo('<td>'.$content.'</td>');
 	}
 
 	//Close body and include some JS files
