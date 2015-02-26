@@ -40,6 +40,7 @@ class IndexView{
 			  	<section class="top-bar-section">
 			    <!-- Right Nav Section -->
 			    	<ul class="right">
+			    	<li class="active"><a href="./addQuest.php">Add a quest</a></li>
 			      		<li class="has-dropdown">
 					        <a href="#">Zones</a>
 					        <ul class="dropdown">
