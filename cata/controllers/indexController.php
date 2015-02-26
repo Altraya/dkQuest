@@ -12,9 +12,13 @@
 	$view->header("DK-Quest - Accueil");
 		$view->topBar();
 
-		$quests = $model->getQuestList();
-		
-		$view->tab($quests);
+		$questsHyjal = $model->getQuestList("Hyjal");
+		$questsVash = $model->getQuestList("Vash\'Jir");
+		$questsTrefond = $model->getQuestList("Le tréfond");
+		$questsUldum = $model->getQuestList("Uldum");
+		$questsCrepu = $model->getQuestList("Les Hautes terres du crépuscule");
+
+		$view->tab($questsHyjal, $questsVash, $questsTrefond, $questsUldum, $questsCrepu);
 	$view->closeBody();
 	$view->closeHTML();
 ?>

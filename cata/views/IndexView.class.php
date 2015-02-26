@@ -43,7 +43,7 @@ class IndexView{
 			      		<li class="has-dropdown">
 					        <a href="#">Zones</a>
 					        <ul class="dropdown">
-					          	<li><a href="./index.php">DK-Quest - Wotlk</a></li>
+					          	<li><a href="../index.php">DK-Quest - Wotlk</a></li>
 					          	<li><a href="index.php">Dk-Quest - Cataclysm</a></li>
 					        </ul>
 			      		</li>
@@ -79,7 +79,7 @@ class IndexView{
 						<td>'.$quest->getName().'</td>
 						<td>'.$quest->getSituation().'</td>
 						<td>'.$quest->getLastModif().'</td>
-						<td>'.$quest->getLinkBugReport().'</td>
+						<td><a href="'.$quest->getLinkBugReport().'"> '.$quest->getLinkBugReport().'</a></td>
 						<td>'.$quest->getComment().'</td>
 					</tr>';
 			}
@@ -91,29 +91,33 @@ class IndexView{
 	}
 
 	//show the tab and the tab content (table with quests for each zone)
-	public function tab($questsArray)
+	public function tab($questsHyjal, $questsVash, $questsTrefond, $questsUldum, $questsCrepu)
 	{
 		$html = '';
 		$html.= '
 			<ul class="tabs" data-tab role="tablist">
 			  	<li class="tab-title active"><a href="#panel1">Hyjal</a></li>
-			  	<li class="tab-title"><a href="#panel2">Vash\'jir</a></li>
+			  	<li class="tab-title"><a href="#panel2">Vash\'Jir</a></li>
 			  	<li class="tab-title"><a href="#panel3">Le tréfond</a></li>
 			  	<li class="tab-title"><a href="#panel4">Uldum</a></li>
 			  	<li class="tab-title"><a href="#panel5">Les Hautes terres du crépuscule</a></li>
 			</ul>
 			<div class="tabs-content">
 			  	<div class="content active" id="panel1">
-			    	<p>'.$this->table($questsArray).'</p>
+			    	<p>'.$this->table($questsHyjal).'</p>
 			  	</div>
 				<div class="content" id="panel2">
-			    	<p>'.$this->table($questsArray).'</p>
+			    	<p>'.$this->table($questsVash).'</p>
 			  	</div>
 			  	<div class="content" id="panel3">
-			    	<p>'.$this->table($questsArray).'</p>
+			    	<p>'.$this->table($questsTrefond).'</p>
 			  	</div>
 			  	<div class="content" id="panel4">
-			    	<p>'.$this->table($questsArray).'</p>
+			    	<p>'.$this->table($questsUldum).'</p>
+			  	</div>
+			  
+			  	<div class="content" id="panel5">
+			    	<p>'.$this->table($questsCrepu).'</p>
 			  	</div>
 			</div>
 		';
