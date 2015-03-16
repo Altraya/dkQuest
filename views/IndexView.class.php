@@ -40,6 +40,7 @@ class IndexView{
 			  	<section class="top-bar-section">
 			    <!-- Right Nav Section -->
 			    	<ul class="right">
+			    		<li class="active"><a href="./addQuest.php">Add a quest</a></li>
 			      		<li class="has-dropdown">
 					        <a href="#">Zones</a>
 					        <ul class="dropdown">
@@ -91,6 +92,7 @@ class IndexView{
 	}
 
 	//show the tab and the tab content (table with quests for each zone)
+	//not use anymore
 	public function tab($questsNorfendre, $questsOutreterre, $questsKalimdor, $questsRoyaumeEst)
 	{
 		$html = '';
@@ -113,6 +115,60 @@ class IndexView{
 			  	</div>
 			  	<div class="content" id="panel4">
 			    	<p>'.$this->table($questsRoyaumeEst).'</p>
+			  	</div>
+			</div>
+		';
+		echo($html);
+	}
+
+	//show the tab and the tab content (table with quests for each zone)
+	public function tabNorfendre($questsNorfendre)
+	{
+		$questsToundraBoreenne = $questsNorfendre['Toundra Boreenne'];
+		$questsFjordHurlant = $questsNorfendre['Fjord Hurlant'];
+		$questsDesolation = $questsNorfendre['Désolation des dragons'];
+		$questsBassin = $questsNorfendre['Bassin de Sholazar'];
+		$questsCouronne = $questsNorfendre['Couronne de glace'];
+		$questsZul = $questsNorfendre['Zul Drak'];
+		$questsPics = $questsNorfendre['Pics foudroyés'];
+		$questsForet = $questsNorfendre['Fôret du chant de cristal'];
+
+		$html = '';
+		$html.= '
+			<ul class="tabs" data-tab role="tablist">
+			  	<li class="tab-title active"><a href="#panel1">Toundra Boreenne</a></li>
+			  	<li class="tab-title"><a href="#panel2">Fjord Hurlant</a></li>
+			  	<li class="tab-title"><a href="#panel3">Désolation des dragons</a></li>
+			  	<li class="tab-title"><a href="#panel4">Bassin de Sholazar</a></li>
+			  	<li class="tab-title"><a href="#panel5">Couronne de glace</a></li>
+			  	<li class="tab-title"><a href="#panel6">Zul Drak</a></li>
+			  	<li class="tab-title"><a href="#panel6">Pics foudroyés</a></li>
+			  	<li class="tab-title"><a href="#panel6">Fôret du chant de cristal</a></li>
+			</ul>
+			<div class="tabs-content">
+			  	<div class="content active" id="panel1">
+			    	<p>'.$this->table($questsToundraBoreenne).'</p>
+			  	</div>
+				<div class="content" id="panel2">
+			    	<p>'.$this->table($questsFjordHurlant).'</p>
+			  	</div>
+			  	<div class="content" id="panel3">
+			    	<p>'.$this->table($questsDesolation).'</p>
+			  	</div>
+			  	<div class="content" id="panel4">
+			    	<p>'.$this->table($questsBassin).'</p>
+			  	</div>
+				<div class="content" id="panel5">
+			    	<p>'.$this->table($questsCouronne).'</p>
+			  	</div>
+			  	<div class="content" id="panel6">
+			    	<p>'.$this->table($questsZul).'</p>
+			  	</div>
+			  	<div class="content" id="panel7">
+			    	<p>'.$this->table($questsPics).'</p>
+			  	</div>
+			  	<div class="content" id="panel8">
+			    	<p>'.$this->table($questsForet).'</p>
 			  	</div>
 			</div>
 		';
