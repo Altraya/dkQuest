@@ -12,24 +12,9 @@
 	$view->header("DK-Quest - Accueil");
 		$view->topBar();
 
-		/*$questsNorfendre = $model->getQuestList("Norfendre");
-		$questsOutreterre = $model->getQuestList("Outreterre");
-		$questsKalimdor = $model->getQuestList("Kalimdor");
-		$questsRoyaumeEst = $model->getQuestList("Royaume de l\'est");*/
+		$view->messageIndex();
 
-		$questsNorfendre = array();
-		
-		$questsNorfendre['Toundra Boreenne'] = $model->getQuestList("Norfendre - Toundra Boréenne");
-		$questsNorfendre['Fjord Hurlant'] = $model->getQuestList("Norfendre - Fjord Hurlant");
-		$questsNorfendre['Désolation des dragons'] = $model->getQuestList("Norfendre - Désolation des dragons");
-		$questsNorfendre['Bassin de Sholazar'] = $model->getQuestList("Norfendre - Bassin de Sholazar");
-		$questsNorfendre['Couronne de glace'] = $model->getQuestList("Norfendre - Couronne de glace");
-		$questsNorfendre['Zul Drak'] = $model->getQuestList("Norfendre - Zul Drak");
-		$questsNorfendre['Pics foudroyés'] = $model->getQuestList("Norfendre - Pics foudroyés");
-		$questsNorfendre['Fôret du chant de cristal'] = $model->getQuestList("Norfendre - Fôret du chant de cristal");
-
-		//var_dump($questsNorfendre);
-		$view->tabNorfendre($questsNorfendre);
+		$view->footer();
 	$view->closeBody();
 	$view->closeHTML();
 ?>
