@@ -49,7 +49,7 @@ class FormView{
 						<label for="date">Date de dernière modification ou test
 							<input name="date" type="date" required pattern="date" placeholder="" />
 						</label>
-						<small class="error">Entrez une date valide sur le format (JJ/MM/AAAA)</small>
+						<small class="error">Entrez une date valide sur le format (JJ/MM/AAAA)(ou AAAA-MM-DD pour les utilisateurs de firefox)</small>
 					</div>
 				</div>
 			</div>
