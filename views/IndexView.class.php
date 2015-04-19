@@ -537,10 +537,11 @@ class IndexView{
 					Cliquez sur le menu zone pour trouver les quêtes d\une zone précise. Pour add une quête cliquez sur le bouton add a quest.<br/>
 					<br/>
 					Fonctionnalitées manquante et en cours de dev :<br/>
-						- Mettre les liens de la DkDB pour les ids pour vous renvoyer directement sur la quête.<br/>
-						- Faire les zones : Royaume de l\'est et Outreterre.<br/>
+						- Mettre les liens de la DkDB pour les ids pour vous renvoyer directement sur la quête. - Fait<br/>
+						- Faire les zones : Royaume de l\'est et Outreterre. - Fait<br/>
+						- Permettre d\'ajouter des quêtes ailleurs qu\'en Norfendre. - Fait<br/>	
 						- Une fonction de recherche par nom / id / statut / rapport de bug.<br/>	
-						- Permettre d\'ajouter des quêtes ailleurs qu\'en Norfendre.<br/>			
+						- Permettre de trier chaque tableau par chaque critère. <br/>
 				</p>
 			</div>
 		';
