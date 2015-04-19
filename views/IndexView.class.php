@@ -44,9 +44,9 @@ class IndexView{
 			    		<li class="has-dropdown">
 					        <a href="#">Zones</a>
 					        <ul class="dropdown">
-					          	<li><a href="#">Royaume de l\'est</a></li>
+					          	<li><a href="./royaumeDeLest.php">Royaume de l\'est</a></li>
 					          	<li><a href="./kalimdor.php">Kalimdor</a></li>
-					          	<li><a href="#">Outreterre</a></li>
+					          	<li><a href="./outreterre.php">Outreterre</a></li>
 					          	<li><a href="./norfendre.php">Norfendre</a></li>
 
 					        </ul>
@@ -152,8 +152,8 @@ class IndexView{
 			  	<li class="tab-title"><a href="#panel4">Bassin de Sholazar</a></li>
 			  	<li class="tab-title"><a href="#panel5">Couronne de glace</a></li>
 			  	<li class="tab-title"><a href="#panel6">Zul Drak</a></li>
-			  	<li class="tab-title"><a href="#panel6">Pics foudroyés</a></li>
-			  	<li class="tab-title"><a href="#panel6">Fôret du chant de cristal</a></li>
+			  	<li class="tab-title"><a href="#panel7">Pics foudroyés</a></li>
+			  	<li class="tab-title"><a href="#panel8">Fôret du chant de cristal</a></li>
 			</ul>
 			<div class="tabs-content">
 			  	<div class="content active" id="panel1">
@@ -180,6 +180,50 @@ class IndexView{
 			  	<div class="content" id="panel8">
 			    	<p>'.$this->table($questsForet).'</p>
 			  	</div>
+			</div>
+		';
+		echo($html);
+	}
+
+	//show the tab and the tab content (table with quests for each zone on norfendre)
+	public function tabOutreterre($questsOutreterre)
+	{
+
+		$html = '';
+		$html.= '
+			<ul class="tabs" data-tab role="tablist">
+			  	<li class="tab-title active"><a href="#panel1">Forêt de Terokkar</a></li>
+			  	<li class="tab-title"><a href="#panel2">Les Tranchantes</a></li>
+			  	<li class="tab-title"><a href="#panel3">Marécage de Zangar</a></li>
+			  	<li class="tab-title"><a href="#panel4">Nagrand</a></li>
+			  	<li class="tab-title"><a href="#panel5">Péninsule des Flammes infernales</a></li>
+			  	<li class="tab-title"><a href="#panel6">Raz-de-Néant</a></li>
+			  	<li class="tab-title"><a href="#panel7">Vallée d\'Ombrelune</a></li>
+			</ul>
+			<div class="tabs-content">
+			';
+			$num = 1;
+			foreach ($questsOutreterre as $keyQ => $questOT) {
+				if($num == 1)
+				{
+					$html.='
+					<div class="content active" id="panel'.$num.'">
+			    		<p>'.$this->table($questOT).'</p>
+			  		</div>
+				';
+				}
+				else
+				{
+					$html.='
+						<div class="content" id="panel'.$num.'">
+				    		<p>'.$this->table($questOT).'</p>
+				  		</div>
+					';
+				}	
+				$num ++;
+			}
+			
+			$html.='
 			</div>
 		';
 		echo($html);
@@ -294,6 +338,141 @@ class IndexView{
 			  	</div>
 			  	<div class="content" id="panel20">
 			    	<p>'.$this->table($questsBrumeSang).'</p>
+			  	</div>
+			</div>
+		';
+		echo($html);
+	}
+
+	//show the tab and the tab content (table with quests for each zone)
+	public function tabRoyaumeEst($questsRoyaumeEst)
+	{
+
+		$questsBoisPenombre = $questsRoyaumeEst['Bois de la Pénombre'];
+		$questsBoisChantsEternels = $questsRoyaumeEst['Bois des Chants éternels'];
+		$questsClairiereTirisfal = $questsRoyaumeEst['Clairières de Tirisfal'];
+		$questsContreforts = $questsRoyaumeEst['Contreforts de Hautebrande'];
+		$questsDunMorogh = $questsRoyaumeEst['Dun Morogh'];
+		$questsDeuillevent = $questsRoyaumeEst['Défilé de Deuillevent'];
+		$questsElwynn = $questsRoyaumeEst['Forêt d\'Elwynn'];
+		$questsPinsArgentes = $questsRoyaumeEst['Forêt des Pins argentés'];
+		$questsGorges = $questsRoyaumeEst['Gorge des Vents brûlants'];
+		$questsArathi = $questsRoyaumeEst['Hautes-terres d\'Arathi'];
+		$questsCarmine = $questsRoyaumeEst['Les carmines'];
+		$questsHinterlands = $questsRoyaumeEst['Les Hinterlands'];
+		$questsPaluns = $questsRoyaumeEst['Les Paluns'];
+		$questsTerresFantomes = $questsRoyaumeEst['Les Terres fantômes'];
+		$questsLochModan = $questsRoyaumeEst['Loch Modan'];
+		$questsMaleterresEst = $questsRoyaumeEst['Maleterres de l\'est'];
+		$questsMaleterresOuest = $questsRoyaumeEst['Maleterres de l\'ouest'];
+		$questsMaraisChagrin = $questsRoyaumeEst['Marais des Chagrins'];
+		$questsMarcheOuest = $questsRoyaumeEst['Marche de l\'Ouest'];
+		$questsSteppesArdentes = $questsRoyaumeEst['Steppes ardentes'];
+		$questsTerresFoudroyes = $questsRoyaumeEst['Terres foudroyées'];
+		$questsTerresIngrates = $questsRoyaumeEst['Terres ingrates'];
+		$questsValleeStrangleronce = $questsRoyaumeEst['Vallée de Strangleronce'];
+		$questQuelDanas = $questsRoyaumeEst['Île de Quel\'Danas'];
+
+		$html = '';
+		$html.= '
+			<ul class="tabs" data-tab role="tablist">
+			  	<li class="tab-title active"><a href="#panel1">Bois de la Pénombre</a></li>
+			  	<li class="tab-title"><a href="#panel2">Bois des Chants éternels</a></li>
+			  	<li class="tab-title"><a href="#panel3">Clairières de Tirisfal</a></li>
+			  	<li class="tab-title"><a href="#panel4">Contreforts de Hautebrande</a></li>
+			  	<li class="tab-title"><a href="#panel5">Dun Morogh</a></li>
+			  	<li class="tab-title"><a href="#panel6">Défilé de Deuillevent</a></li>
+			  	<li class="tab-title"><a href="#panel7">Forêt d\'Elwynn</a></li>
+			  	<li class="tab-title"><a href="#panel8">Forêt des Pins argentés</a></li>
+			  	<li class="tab-title"><a href="#panel9">Gorge des Vents brûlants</a></li>
+			  	<li class="tab-title"><a href="#panel10">Hautes-terres d\'Arathi</a></li>
+			  	<li class="tab-title"><a href="#panel11">Les carmines</a></li>
+			  	<li class="tab-title"><a href="#panel12">Les Hinterlands</a></li>
+			  	<li class="tab-title"><a href="#panel13">Les Paluns</a></li>
+			  	<li class="tab-title"><a href="#panel14">Les Terres fantômes</a></li>
+			  	<li class="tab-title"><a href="#panel15">Loch Modan</a></li>
+			  	<li class="tab-title"><a href="#panel16">Maleterres de l\'est</a></li>
+			  	<li class="tab-title"><a href="#panel17">Maleterres de l\'ouest</a></li>
+			  	<li class="tab-title"><a href="#panel18">Marais des Chagrins</a></li>
+			  	<li class="tab-title"><a href="#panel19">Marche de l\'Ouest</a></li>
+			  	<li class="tab-title"><a href="#panel20">Steppes ardente</a></li>
+			  	<li class="tab-title"><a href="#panel21">Terres foudroyées</a></li>
+			  	<li class="tab-title"><a href="#panel22">Terres ingrates</a></li>
+			  	<li class="tab-title"><a href="#panel23">Vallée de Strangleronce</a></li>
+			  	<li class="tab-title"><a href="#panel24">Île de Quel\'Danas</a></li>
+			</ul>
+			<div class="tabs-content">
+			  	<div class="content active" id="panel1">
+			    	<p>'.$this->table($questsBoisPenombre).'</p>
+			  	</div>
+				<div class="content" id="panel2">
+			    	<p>'.$this->table($questsBoisChantsEternels).'</p>
+			  	</div>
+			  	<div class="content" id="panel3">
+			    	<p>'.$this->table($questsClairiereTirisfal).'</p>
+			  	</div>
+			  	<div class="content" id="panel4">
+			    	<p>'.$this->table($questsContreforts).'</p>
+			  	</div>
+				<div class="content" id="panel5">
+			    	<p>'.$this->table($questsDunMorogh).'</p>
+			  	</div>
+			  	<div class="content" id="panel6">
+			    	<p>'.$this->table($questsDeuillevent).'</p>
+			  	</div>
+			  	<div class="content" id="panel7">
+			    	<p>'.$this->table($questsElwynn).'</p>
+			  	</div>
+			  	<div class="content" id="panel8">
+			    	<p>'.$this->table($questsPinsArgentes).'</p>
+			  	</div>
+			  	<div class="content" id="panel9">
+			    	<p>'.$this->table($questsGorges).'</p>
+			  	</div>
+			  	<div class="content" id="panel10">
+			    	<p>'.$this->table($questsArathi).'</p>
+			  	</div>
+			  	<div class="content" id="panel11">
+			    	<p>'.$this->table($questsCarmine).'</p>
+			  	</div>
+			  	<div class="content" id="panel12">
+			    	<p>'.$this->table($questsHinterlands).'</p>
+			  	</div>
+			  	<div class="content" id="panel13">
+			    	<p>'.$this->table($questsPaluns).'</p>
+			  	</div>
+			  	<div class="content" id="panel14">
+			    	<p>'.$this->table($questsTerresFantomes).'</p>
+			  	</div>
+			  	<div class="content" id="panel15">
+			    	<p>'.$this->table($questsLochModan).'</p>
+			  	</div>
+			  	<div class="content" id="panel16">
+			    	<p>'.$this->table($questsMaleterresEst).'</p>
+			  	</div>
+			  	<div class="content" id="panel17">
+			    	<p>'.$this->table($questsMaleterresOuest).'</p>
+			  	</div>
+			  	<div class="content" id="panel18">
+			    	<p>'.$this->table($questsMaraisChagrin).'</p>
+			  	</div>
+			  	<div class="content" id="panel19">
+			    	<p>'.$this->table($questsMarcheOuest).'</p>
+			  	</div>
+			  	<div class="content" id="panel20">
+			    	<p>'.$this->table($questsSteppesArdentes).'</p>
+			  	</div>
+			  	<div class="content" id="panel21">
+			    	<p>'.$this->table($questsTerresFoudroyes).'</p>
+			  	</div>
+			  	<div class="content" id="panel22">
+			    	<p>'.$this->table($questsTerresIngrates).'</p>
+			  	</div>
+			  	<div class="content" id="panel23">
+			    	<p>'.$this->table($questsValleeStrangleronce).'</p>
+			  	</div>
+			  	<div class="content" id="panel24">
+			    	<p>'.$this->table($questQuelDanas).'</p>
 			  	</div>
 			</div>
 		';
