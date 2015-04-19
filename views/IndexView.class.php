@@ -542,6 +542,8 @@ class IndexView{
 						- Permettre d\'ajouter des quêtes ailleurs qu\'en Norfendre. - Fait<br/>	
 						- Une fonction de recherche par nom / id / statut / rapport de bug.<br/>	
 						- Permettre de trier chaque tableau par chaque critère. <br/>
+						- Ajouter un champ pour le nom du testeur ? <br/>
+						- Ajouter un champ pour la faction -> Alliance / Horde ou les deux. <br/>
 				</p>
 			</div>
 		';
