@@ -18,6 +18,9 @@ class IndexView{
 				<link rel="stylesheet" href="css/normalize.css">
 				<link rel="stylesheet" href="css/hack.css">
 				<script src="/js/vendor/modernizr.js"></script>
+				';
+				$this->googleAnalytic();
+		$html.='
 			</head>
 		<body>';
 
@@ -545,6 +548,7 @@ class IndexView{
 						- Ajouter un champ pour le nom du testeur ? <br/>
 						- Ajouter un champ pour la faction -> Alliance / Horde ou les deux. <br/>
 				</p>
+				<p>Ce site utilise googleAnalytic à des fins de statistiques. Toutes les données receuillies sont strictement anonymes, en continuant votre navigation, vous reconnaissez en avoir été informé et acceptez la transmition de ces données.</p>
 			</div>
 		';
 		echo($html);
@@ -558,5 +562,21 @@ class IndexView{
 		echo($html);
 	}
 
+	public function googleAnalytic(){
+		$html = '';
+		$html.='
+			<script>
+			  (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');
+
+			  ga(\'create\', \'UA-58797963-2\', \'auto\');
+			  ga(\'send\', \'pageview\');
+
+			</script>
+		';
+		echo($html);
+	}
 }
 ?>

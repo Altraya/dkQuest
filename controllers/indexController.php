@@ -15,6 +15,7 @@
 		$view->messageIndex();
 
 		$view->footer();
+
 	$view->closeBody();
 	$view->closeHTML();
 ?>
