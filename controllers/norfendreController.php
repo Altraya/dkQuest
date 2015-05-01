@@ -22,6 +22,8 @@
 		$questsNorfendre['Zul Drak'] = $model->getQuestList("Norfendre - Zul Drak");
 		$questsNorfendre['Pics foudroyés'] = $model->getQuestList("Norfendre - Pics foudroyés");
 		$questsNorfendre['Fôret du chant de cristal'] = $model->getQuestList("Norfendre - Fôret du chant de cristal");
+		$questsNorfendre['Les Grisonnes'] = $model->getQuestList("Norfendre - Les Grisonnes");
+
 
 		$view->tabNorfendre($questsNorfendre);
 

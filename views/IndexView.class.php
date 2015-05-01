@@ -145,6 +145,7 @@ class IndexView{
 		$questsZul = $questsNorfendre['Zul Drak'];
 		$questsPics = $questsNorfendre['Pics foudroyés'];
 		$questsForet = $questsNorfendre['Fôret du chant de cristal'];
+		$questsGrisonnes = $questsNorfendre['Les Grisonnes'];
 
 		$html = '';
 		$html.= '
@@ -157,6 +158,7 @@ class IndexView{
 			  	<li class="tab-title"><a href="#panel6">Zul Drak</a></li>
 			  	<li class="tab-title"><a href="#panel7">Pics foudroyés</a></li>
 			  	<li class="tab-title"><a href="#panel8">Fôret du chant de cristal</a></li>
+			  	<li class="tab-title"><a href="#panel9">Les Grisonnes</a></li>
 			</ul>
 			<div class="tabs-content">
 			  	<div class="content active" id="panel1">
@@ -182,6 +184,9 @@ class IndexView{
 			  	</div>
 			  	<div class="content" id="panel8">
 			    	<p>'.$this->table($questsForet).'</p>
+			  	</div>
+			  	<div class="content" id="panel9">
+			    	<p>'.$this->table($questsGrisonnes).'</p>
 			  	</div>
 			</div>
 		';
@@ -547,6 +552,9 @@ class IndexView{
 						- Permettre de trier chaque tableau par chaque critère. <br/>
 						- Ajouter un champ pour le nom du testeur ? <br/>
 						- Ajouter un champ pour la faction -> Alliance / Horde ou les deux. <br/>
+						- Ajouter des commentaires en bas de la page d\'accueil.<br/>
+						- Ajouter un espace membre (peut être directement avec les comptes darluok) pour pouvoir modifier chaque quête.<br/>
+						- Ajouter un pannel admin pour avoir tous les logs des modifications.
 				</p>
 				<p>Ce site utilise googleAnalytic à des fins de statistiques. Toutes les données receuillies sont strictement anonymes, en continuant votre navigation, vous reconnaissez en avoir été informé et acceptez la transmition de ces données.</p>
 			</div>

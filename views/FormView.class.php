@@ -140,6 +140,7 @@ class FormView{
 						        	<option value="Norfendre - Zul Drak">Zul Drak</option>
 						           	<option value="Norfendre - Pics foudroyés">Pics foudroyés</option>
 						           	<option value="Norfendre - Fôret du chant de cristal">Fôret du champ de cristal</option>
+						        	<option value="Norfendre - Les Grisonnes">Les Grisonnes</option>
 						        </optgroup>
 					        </select>
 						</label>
